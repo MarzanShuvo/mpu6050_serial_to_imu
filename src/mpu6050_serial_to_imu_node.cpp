@@ -178,7 +178,7 @@ int main(int argc, char** argv)
                 // publish imu message
                 imu.header.stamp = measurement_time;
                 imu.header.frame_id = frame_id;
-
+                differential_rotation.normalized();
                 quaternionTFToMsg(differential_rotation, imu.orientation);
 
                 imu.angular_velocity.x = gxf;
